@@ -1,11 +1,47 @@
-class CreateMessages < ActiveRecord::Migration
-  def change
-    create_table :messages do |t|
-      t.text :body, null: false
-      t.string :image, null: false
-      t.integer :group_id, null: false
-      t.integer :user_id, null:false
-      t.timestamps null: false
-    end
-  end
-end
+# <u> 1. Userモデル </u>
+
+### Association
+  - has_many :messages
+  - has_and_belongs_to_many :groups
+
+
+  ###  Columns
+    - name :string, null: false
+    - email :string, null: false, unique: true
+    - password :string, null: false
+    - has_and_belongs_to_many :user
+    - has_many :messages
+
+
+  ### Columns
+    - name :string, null: false
+    - user :string, null: false
+    - user :references
+    - created_at
+    - updated_at
+
+***
+
+
+# <u> 2. Groups_Usersモデル </u>
+
+  ### Columns
+    - user :references
+    - group :references
+
+***
+
+# <u> 3. Messageモデル </u>
+
+### Association
+  - belongs_to :user
+  - belongs_to :group
+
+
+  ### Columns
+    - body :text, null: false
+    - image :string, null: false
+    - user :references
+    - group :references
+    - created_at
+    - updated_at
