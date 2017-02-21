@@ -24,6 +24,7 @@
 
 
 # <u> 2. Groups_Usersモデル </u>
+######(Groups_Usersモデル)
 
   ### Columns
     - user :references
