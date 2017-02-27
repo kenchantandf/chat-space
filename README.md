@@ -23,7 +23,7 @@
 ***
 
 
-# <u> 2. Groups_Usersモデル </u>
+# <u> 2. GroupsUsersモデル </u>
 ######(Groups_Usersモデル)
 
   ### Columns
