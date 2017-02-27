@@ -1,8 +1,9 @@
 # <u> 1. Userモデル </u>
 
 ### Association
-  - has_many :messages
-  - has_and_belongs_to_many :groups
+<!--   - has_many :messages
+  - has_and_belongs_to_many :groups -->
+  -has_many: messages, through: groups
 
 
   ###  Columns
