@@ -9,8 +9,9 @@
     - name :string, null: false
     - email :string, null: false, unique: true
     - password :string, null: false
-    - has_and_belongs_to_many :user
-    - has_many :messages
+<!--     - has_and_belongs_to_many :user -->
+    - has_many :messages, through: user
+<!--     - has_many :messages -->
 
 
   ### Columns
