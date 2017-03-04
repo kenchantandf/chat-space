@@ -1,60 +1,3 @@
-# <u> 1. Userモデル </u>
-
-### Association
-<!--   - has_many :messages
-  - has_and_belongs_to_many :groups -->
-  -has_many: messages, through: groups
-
-
-  ###  Columns
-    - name :string, null: false
-    - email :string, null: false, unique: true
-    - password :string, null: false
-<!--     - has_and_belongs_to_many :user -->
-    - has_many :messages
-<!--     - has_many :messages -->
-    - created_at
-    - updated_at
-
-***
-
-# <u> 2. Groupsモデル </u>
-
-### Association
-    -has_many: messages, through: groups
-
- ### Columns
-  -name: string, null: false
-  -user :reference
-  -created_at
-  -updated_at
-
-
-# <u> 3. GroupsUsersモデル </u>
-######(Groups_Usersモデル)
-
-  ### Columns
-    - user :references
-    - group :references
-
-***
-
-# <u> 4. Messageモデル </u>
-
-### Association
-  - belongs_to :user
-  - belongs_to :group
-
-
-  ### Columns
-    - body :text
-    - image :string
-    - user :references
-    - group :references
-    - created_at
-    - updated_at
-
-
 # DataBase
 ***
 
@@ -67,6 +10,49 @@
 | password | string  | null: false    |
 
 ###Association
-has_many :messages
-has_many :groupusers
-has_many :groups, through: :groupusers
+-has_many :messages
+-has_many :groupusers
+-has_many :groups, through: :groupusers
+
+***
+
+# <u> 2. Groupsモデル </u>
+
+| column     | type       | option         |
+|:-----------|:-----------|:---------------|
+| name       | string     | null: false    |
+| user       | reference  | null: false    |
+| created_at |            | null: false    |
+| updated_at |            | null: false    |
+
+###Association
+-has_many :messages
+-has_many :groupusers
+-has_many :users, through: :groupusers
+
+***
+
+# <u> 3. Messageモデル </u>
+| column   | type        | option         |
+|:---------|:------------|:---------------|
+| body     | text        | null: false    |
+| image    | string      | null: false    |
+| group_id | references  |                |
+| user_id  | references  |                |
+
+###Association
+-belongs_to :user
+-belongs_to :group
+
+***
+
+# <u> 4. GroupsUsersモデル </u>
+
+| column   | type        | option         |
+|:---------|:------------|:---------------|
+| group_id | references  |                |
+| user_id  | references  |                |
+
+###Association
+-belongs_to :user
+-belongs_to :group
