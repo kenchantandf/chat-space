@@ -11,8 +11,8 @@
 
 ###Association
 - has_many :messages
-- has_many :groupusers
-- has_many :groups, through: :groupusers
+- has_many :group_users
+- has_many :groups, through: :group_users
 
 ***
 
@@ -22,13 +22,12 @@
 |:-----------|:-----------|:---------------|
 | name       | string     | null: false    |
 | user       | references | null: false    |
-| created_at |            | null: false    |
-| updated_at |            | null: false    |
+
 
 ###Association
 - has_many :messages
 - has_many :groupusers
-- has_many :users, through: :groupusers
+- has_many :users, through: :group_users
 
 ***
 
@@ -36,7 +35,7 @@
 | column   | type        | option         |
 |:---------|:------------|:---------------|
 | body     | text        | null: false    |
-| image    | string      | null: false    |
+| image    | string      |                |
 | group_id | references  |                |
 | user_id  | references  |                |
 
