@@ -2,6 +2,6 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def upate
+  def update
   end
 end
