@@ -1,7 +1,7 @@
 # DataBase
 ***
 
-# <u> 1. Usesrテーブル </u>
+# <u> 1. Usersテーブル </u>
 
 | column   | type    | option         |
 |:---------|:--------|:---------------|
