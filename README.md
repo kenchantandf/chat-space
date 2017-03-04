@@ -10,9 +10,9 @@
 | password | string  | null: false    |
 
 ###Association
--has_many :messages
--has_many :groupusers
--has_many :groups, through: :groupusers
+- has_many :messages
+- has_many :groupusers
+- has_many :groups, through: :groupusers
 
 ***
 
@@ -26,9 +26,9 @@
 | updated_at |            | null: false    |
 
 ###Association
--has_many :messages
--has_many :groupusers
--has_many :users, through: :groupusers
+- has_many :messages
+- has_many :groupusers
+- has_many :users, through: :groupusers
 
 ***
 
@@ -41,8 +41,8 @@
 | user_id  | references  |                |
 
 ###Association
--belongs_to :user
--belongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 ***
 
@@ -54,5 +54,5 @@
 | user_id  | references  |                |
 
 ###Association
--belongs_to :user
--belongs_to :group
+- belongs_to :user
+- belongs_to :group
