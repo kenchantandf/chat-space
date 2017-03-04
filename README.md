@@ -21,7 +21,6 @@
 | column     | type       | option         |
 |:-----------|:-----------|:---------------|
 | name       | string     | null: false    |
-| user       | references | null: false    |
 
 
 ###Association
