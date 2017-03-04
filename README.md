@@ -1,7 +1,7 @@
 # DataBase
 ***
 
-# <u> 1. Userモデル </u>
+# <u> 1. Usesrテーブル </u>
 
 | column   | type    | option         |
 |:---------|:--------|:---------------|
@@ -16,7 +16,7 @@
 
 ***
 
-# <u> 2. Groupsモデル </u>
+# <u> 2. Groupsテーブル </u>
 
 | column     | type       | option         |
 |:-----------|:-----------|:---------------|
@@ -32,7 +32,7 @@
 
 ***
 
-# <u> 3. Messageモデル </u>
+# <u> 3. Messagesテーブル </u>
 | column   | type        | option         |
 |:---------|:------------|:---------------|
 | body     | text        | null: false    |
@@ -46,7 +46,7 @@
 
 ***
 
-# <u> 4. GroupsUsersモデル </u>
+# <u> 4. GroupsUsersテーブル </u>
 
 | column   | type        | option         |
 |:---------|:------------|:---------------|
