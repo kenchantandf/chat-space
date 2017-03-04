@@ -3,7 +3,7 @@
 ### Association
 <!--   - has_many :messages
   - has_and_belongs_to_many :groups -->
-  -has_many: messages, through: groups
+  -has_many: messages
 
 
   ###  Columns
@@ -11,21 +11,26 @@
     - email :string, null: false, unique: true
     - password :string, null: false
 <!--     - has_and_belongs_to_many :user -->
-    - has_many :messages, through: user
+    - has_many :messages
 <!--     - has_many :messages -->
-
-
-  ### Columns
-    - name :string, null: false
-    - user :string, null: false
-    - user :references
     - created_at
     - updated_at
 
 ***
 
+# <u> 2. Groupsモデル </u>
 
-# <u> 2. GroupsUsersモデル </u>
+### Association
+    -has_many: messages, through: users
+
+ ### Columns
+  -name: string, null: false
+  -user :reference
+  -created_at
+  -updated_at
+
+
+# <u> 3. GroupsUsersモデル </u>
 ######(Groups_Usersモデル)
 
   ### Columns
@@ -34,7 +39,7 @@
 
 ***
 
-# <u> 3. Messageモデル </u>
+# <u> 4. Messageモデル </u>
 
 ### Association
   - belongs_to :user
@@ -42,8 +47,8 @@
 
 
   ### Columns
-    - body :text, null: false
-    - image :string, null: false
+    - body :text
+    - image :string
     - user :references
     - group :references
     - created_at
