@@ -21,7 +21,7 @@
 | column     | type       | option         |
 |:-----------|:-----------|:---------------|
 | name       | string     | null: false    |
-| user       | reference  | null: false    |
+| user       | references | null: false    |
 | created_at |            | null: false    |
 | updated_at |            | null: false    |
 
