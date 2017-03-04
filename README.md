@@ -59,10 +59,12 @@
 ***
 
 # <u> 1. Userモデル </u>
-+##usersテーブル
+
 | column   | type    | option         |
 |:---------|:--------|:---------------|
-| name     | string  | NULLNOT, INDEX |
+| name     | string  | null: false    |
+| email    | string  | null: false    |
+| password | string  | null: false    |
 
 ###Association
 has_many :messages
