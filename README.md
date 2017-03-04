@@ -3,7 +3,7 @@
 ### Association
 <!--   - has_many :messages
   - has_and_belongs_to_many :groups -->
-  -has_many: messages
+  -has_many: messages, through: groups
 
 
   ###  Columns
@@ -21,7 +21,7 @@
 # <u> 2. Groupsモデル </u>
 
 ### Association
-    -has_many: messages, through: users
+    -has_many: messages, through: groups
 
  ### Columns
   -name: string, null: false
