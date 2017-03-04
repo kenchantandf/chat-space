@@ -53,3 +53,18 @@
     - group :references
     - created_at
     - updated_at
+
+
+# DataBase
+***
+
+# <u> 1. Userモデル </u>
++##usersテーブル
+| column   | type    | option         |
+|:---------|:--------|:---------------|
+| name     | string  | NULLNOT, INDEX |
+
+###Association
+has_many :messages
+has_many :groupusers
+has_many :groups, through: :groupusers
