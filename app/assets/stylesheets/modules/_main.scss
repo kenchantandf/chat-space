@@ -1,0 +1,54 @@
+.chat {
+  min-width: 980px;
+  height: 100%;
+
+  &-main {
+    height: 100%;
+    width: calc(100% - 300px);
+    position: relative;
+    float: left;
+  }
+
+    &-top {
+      @include clearfix();
+      background-color: $white;
+      padding: 0 40px;
+      border-bottom: 1px solid #eee;
+
+      &--left {
+        float: left;
+      }
+
+        h2 {
+          color: $text-color;
+          line-height: 50px;
+          margin-top: 20px;
+          letter-spacing: 2px;
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        p {
+          color: $light-gray;
+          font-size: 12px;
+          margin-bottom: 10px;
+        }
+
+          span {
+            margin-left: 3px;
+          }
+
+
+        &__edit-btn {
+          color: $light-blue;
+          display: inline-block;
+          line-height: 40px;
+          margin: 28px 0;
+          padding: 0 20px;
+          border: 2px solid $light-blue;
+          font-size: 14px;
+          float: right;
+          text-decoration: none;
+        }
+    }
+}
