@@ -5,9 +5,9 @@
       .chat-sidetop__icons
         %a.chat-sidetop__icon
           =link_to "" do
-            =fa_icon "pencil-square-o", class: "chat-sidetop__icon"
+            =fa_icon 'pencil-square-o', class: 'chat-sidetop__icon'
           =link_to "/users/#{current_user.id}/edit", method: :get do
-            =fa_icon "gear", class: "chat-sidetop__icon"
+            =fa_icon 'gear', class: 'chat-sidetop__icon'
 
 
     %ul.chat-lists
@@ -37,7 +37,7 @@
           %span.chat-top__user Kento
           %span.chat-top__user Hayato
           %span.chat-top__user Masato
-      =link_to "Edit", "", class: "chat-top__edit-btn"
+      =link_to 'Edit', "", class: 'chat-top__edit-btn'
 
     .chat-context
       %ul.chat-messages
@@ -78,10 +78,10 @@
           %p.chat-message__body ええええええええ！！！
 
     .chat-footer
-      %form.new_message{ action: "", method: "post"}
+      %form.new_message{ action: "", method: 'post'}
         .chat-footer__body
-          %textarea#message_body{ name: "message[body]", placeholder: "type a message"}
+          %textarea#message_body{ name: 'message[body]', placeholder: 'type a message'}
           %label.chat-footer__body__file
-            %input#message_image{ name: "message[image]", type: "file"}
+            %input#message_image{ name: 'message[image]', type: 'file'}
             %i.fa.fa-image
-        %input.submit_btn{type: "submit", value: "Send"}
+        %input.submit_btn{type: 'submit', value: 'Send'}
