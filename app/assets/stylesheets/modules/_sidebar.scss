@@ -1,0 +1,68 @@
+.chat {
+  min-width: 980px;
+  height: 100%;
+
+  &-sidebar {
+    float: left;
+    width: 300px;
+    height: 100%;
+    background-color: $sidebar-color;
+  }
+
+    &-sidetop {
+      @include clearfix();
+      height: 60px;
+      padding: 20px;
+      color: $white;
+      background-color: $sidetop-color;
+
+    h5 {
+      font-weight: bold;
+      float: left;
+      line-height: 60px;
+      letter-spacing: 2px;
+      font-size: 16px;
+    }
+
+    &__icons {
+      float: right;
+    }
+
+      &__icon {
+        display: inline-block;
+        margin: 15px 0 15px 3px;
+        line-height: 28px;
+        color: $white;
+        font-size: 20px;
+      }
+
+      a, a:visited {
+        text-decoration: none;
+      }
+  }
+
+  &-lists {
+    margin: 0;
+    padding: 0;
+    color: $white;
+  }
+
+  &-list {
+
+    &__link {
+      display: block;
+      padding: 20px;
+      color: $white;
+    }
+
+      &__name {
+        display: inline-block;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      &__message {
+        font-size: 11px;
+      }
+  }
+}
