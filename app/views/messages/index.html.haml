@@ -1,0 +1,87 @@
+.chat
+  .chat-sidebar
+    .chat-sidetop
+      %h5 Kento Terao
+      .chat-sidetop__icons
+        %a.chat-sidetop__icon
+          =link_to do
+            =fa_icon "pencil-square-o", class: "chat-sidetop__icon"
+          =link_to "/users/#{current_user.id}/edit", method: :get do
+            =fa_icon "gear", class: "chat-sidetop__icon"
+
+
+    %ul.chat-lists
+      %li.chat-list
+        %a.chat-list__link
+          %p.chat-list__name sampleグループ
+          %p.chat-list__message イギリスの中学に行くことにしたんだ
+      %li.chat-list
+        %a.chat-list__link
+          %p.chat-list__name Global House
+          %p.chat-list__message Celebrating Shota's Birthday tonight!
+      %li.chat-list
+        %a.chat-list__link
+          %p.chat-list__name ADIDAS SHIBUYA
+          %p.chat-list__message  3月のシフト出ました〜！
+      %li.chat-list
+        %a.chat-list__link
+          %p.chat-list__name  MONSTER ENERGY CAT
+          %p.chat-list__message MARCH祭でサンプリングできる人何人いる？
+
+  .chat-main
+    .chat-top
+      .chat-top--left
+        %h2 Sampleグループ
+        %p.chat-top__users
+          Members:
+          %span.chat-top__user Kento
+          %span.chat-top__user Hayato
+          %span.chat-top__user Masato
+      =link_to "Edit", "", class: "chat-top__edit-btn"
+
+    .chat-context
+      %ul.chat-messages
+        %li.chat-message
+          .chat-message__header
+            %p.chat-message__user Kento
+            %p.chat-message__time 2017/03/05 23:43:22
+          %p.chat-message__body みんな久しぶり！
+        %li.chat-message
+          .chat-message__header
+            %p.chat-message__user Kento
+            %p.chat-message__time 2017/03/05 23:44:02
+          %p.chat-message__body 大学決まった？
+        %li.chat-message
+          .chat-message__header
+            %p.chat-message__user Hayato
+            %p.chat-message__time 2017/03/05 23:45:20
+          %p.chat-message__body まあね
+        %li.chat-message
+          .chat-message__header
+            %p.chat-message__user Hayato
+            %p.chat-message__time 2017/03/05 23:47:04
+          %p.chat-message__body カナダのUBCに進学することにしたよ
+        %li.chat-message
+          .chat-message__header
+            %p.chat-message__user Masato
+            %p.chat-message__time 2017/03/05 23:55:30
+          %p.chat-message__body 実は僕も
+        %li.chat-message
+          .chat-message__header
+            %p.chat-message__user Masato
+            %p.chat-message__time 2017/03/05 23:59:33
+          %p.chat-message__body イギリスの中学に行くことにしたんだ
+        %li.chat-message
+          .chat-message__header
+            %p.chat-message__user Kento
+            %p.chat-message__time 2017/03/06 00:00:43
+          %p.chat-message__body ええええええええ！！！
+
+    .chat-footer
+      %form.new_message{ action: "", method: "post"}
+        .chat-footer__body
+          %textarea#message_body{ name: "message[body]", placeholder: "type a message"}
+          %label.chat-footer__body__file
+            %input#message_image{ name: "message[image]", type: "file"}
+            %i.fa.fa-image
+        %input.submit_btn{type: "submit", value: "Send"}
