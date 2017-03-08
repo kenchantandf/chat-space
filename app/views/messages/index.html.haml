@@ -4,7 +4,7 @@
       %h5 Kento Terao
       .chat-sidetop__icons
         %a.chat-sidetop__icon
-          =link_to '/groups/new' do
+          =link_to new_group_path do
             =fa_icon 'pencil-square-o', class: 'chat-sidetop__icon'
           =link_to "/users/#{current_user.id}/edit", method: :get do
             =fa_icon 'gear', class: 'chat-sidetop__icon'
@@ -37,7 +37,7 @@
           %span.chat-top__user Kento
           %span.chat-top__user Hayato
           %span.chat-top__user Masato
-      =link_to 'Edit', "", class: 'chat-top__edit-btn'
+      =link_to 'Edit','#', class: 'chat-top__edit-btn'
 
     .chat-context
       %ul.chat-messages
