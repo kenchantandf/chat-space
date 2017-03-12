@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :set_on_group,except: [:new,:create]
+  before_action :set_on_group,except: [:new, :create]
   def new
     @group = Group.new
   end
@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
       if @group.save
          redirect_to root_path(@group),notice: 'グループの作成が完了しました。'
       else
-        flash.now[:alert] = "グループの作成に失敗しました。"
+        flash.now[:alert] = 'グループの作成に失敗しました。'
         render :new
       end
   end
@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
   end
 
 
-private
+  private
 
   def set_on_group
     @group = Group.find(params[:id])
