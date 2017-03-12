@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
       if @group.save
-         redirect_to root_path(@group),notice: 'グループの作成が完了しました。'
+         redirect_to root_path(@group), notice: 'グループの作成が完了しました。'
       else
         flash.now[:alert] = 'グループの作成に失敗しました。'
         render :new
