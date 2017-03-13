@@ -1,6 +1,14 @@
 class GroupsController < ApplicationController
 
-  before_action :set_on_group,except: [:new, :create]
+  before_action :set_on_group, only: [:show, :edit, :update]
+
+  def index
+    @groups = Group.all
+  end
+
+  def show
+  end
+
   def new
     @group = Group.new
   end
