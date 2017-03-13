@@ -1,12 +1,9 @@
 class GroupsController < ApplicationController
 
-  before_action :set_on_group, only: [:show, :edit, :update]
+  before_action :set_on_group, only: [:edit, :update]
 
   def index
     @groups = Group.all
-  end
-
-  def show
   end
 
   def new
