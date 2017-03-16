@@ -1,23 +1,23 @@
 class GroupsController < ApplicationController
-
   before_action :set_on_group, only: [:edit, :update]
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   def new
     @group = Group.new
+    @group.users << current_user
   end
 
   def create
     @group = Group.new(group_params)
-      if @group.save
-         redirect_to root_path(@group), notice: 'グループの作成が完了しました。'
-      else
-        flash.now[:alert] = 'グループの作成に失敗しました。'
-        render :new
-      end
+     if @group.save
+       redirect_to root_path, notice: 'グループの作成が完了しました。'
+     else
+       flash.now[:alert] = 'グループの作成に失敗しました。'
+       render :new
+     end
   end
 
   def edit
@@ -32,16 +32,14 @@ class GroupsController < ApplicationController
     end
   end
 
-
   private
 
   def set_on_group
     @group = Group.find(params[:id])
   end
 
-
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, user_ids: [])
   end
 
 end
