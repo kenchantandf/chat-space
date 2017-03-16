@@ -1,7 +1,8 @@
 .chat
   .chat-sidebar
     .chat-sidetop
-      %h5 Kento Terao
+      %h5
+        = current_user.name
       .chat-sidetop__icons
         %a.chat-sidetop__icon
           =link_to new_group_path do
@@ -37,7 +38,7 @@
           %span.chat-top__user Kento
           %span.chat-top__user Hayato
           %span.chat-top__user Masato
-      =link_to 'Edit','#', class: 'chat-top__edit-btn'
+      =link_to 'Edit', '#', class: 'chat-top__edit-btn'
 
     .chat-context
       %ul.chat-messages
