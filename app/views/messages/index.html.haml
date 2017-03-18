@@ -8,9 +8,7 @@
         = @group.name
         %p.chat-top__users
           Members:
-          %span.chat-top__user Kento
-          %span.chat-top__user Hayato
-          %span.chat-top__user Masato
+          = render @group.users
       =link_to 'Edit', edit_group_path(@group), class: 'chat-top__edit-btn'
 
     .chat-context
