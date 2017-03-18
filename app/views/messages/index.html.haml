@@ -4,13 +4,14 @@
   .chat-main
     .chat-top
       .chat-top--left
-        %h2 Sampleグループ
+        %h2
+        = @group.name
         %p.chat-top__users
           Members:
           %span.chat-top__user Kento
           %span.chat-top__user Hayato
           %span.chat-top__user Masato
-      =link_to 'Edit', '#', class: 'chat-top__edit-btn'
+      =link_to 'Edit', edit_group_path(@group), class: 'chat-top__edit-btn'
 
     .chat-context
       %ul.chat-messages
