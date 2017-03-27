@@ -9,7 +9,7 @@
         %p.chat-top__users
           Members:
           = render @group.users
-      =link_to 'Edit', edit_group_path(@group), class: 'chat-top__edit-btn'
+      = link_to 'Edit', edit_group_path(@group), class: 'chat-top__edit-btn'
 
     .chat-context
       %ul.chat-messages
