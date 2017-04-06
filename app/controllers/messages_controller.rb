@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :set_group, :set_groups
 
   def index
+    @messages = @group.messages
   end
 
   private
