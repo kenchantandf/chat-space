@@ -1,43 +1,15 @@
 .chat
-  .chat-sidebar
-    .chat-sidetop
-      %h5 Kento Terao
-      .chat-sidetop__icons
-        %a.chat-sidetop__icon
-          =link_to new_group_path do
-            =fa_icon 'pencil-square-o', class: 'chat-sidetop__icon'
-          =link_to "/users/#{current_user.id}/edit", method: :get do
-            =fa_icon 'gear', class: 'chat-sidetop__icon'
-
-
-    %ul.chat-lists
-      %li.chat-list
-        %a.chat-list__link
-          %p.chat-list__name sampleグループ
-          %p.chat-list__message イギリスの中学に行くことにしたんだ
-      %li.chat-list
-        %a.chat-list__link
-          %p.chat-list__name Global House
-          %p.chat-list__message Celebrating Shota's Birthday tonight!
-      %li.chat-list
-        %a.chat-list__link
-          %p.chat-list__name ADIDAS SHIBUYA
-          %p.chat-list__message  3月のシフト出ました〜！
-      %li.chat-list
-        %a.chat-list__link
-          %p.chat-list__name  MONSTER ENERGY CAT
-          %p.chat-list__message MARCH祭でサンプリングできる人何人いる？
+  = render partial: 'layouts/sidebar', locals: { groups: @groups }
 
   .chat-main
     .chat-top
       .chat-top--left
-        %h2 Sampleグループ
+        %h2
+        = @group.name
         %p.chat-top__users
           Members:
-          %span.chat-top__user Kento
-          %span.chat-top__user Hayato
-          %span.chat-top__user Masato
-      =link_to 'Edit','#', class: 'chat-top__edit-btn'
+          = render @group.users
+      = link_to 'Edit', edit_group_path(@group), class: 'chat-top__edit-btn'
 
     .chat-context
       %ul.chat-messages
@@ -80,7 +52,7 @@
     .chat-footer
       %form.new_message{ action: "", method: 'post'}
         .chat-footer__body
-          %textarea#message_body{ name: 'message[body]', placeholder: 'type a message'}
+          %textarea#message_body{ name: 'message[body]', placeholder: '   type a message'}
           %label.chat-footer__body__file
             %input#message_image{ name: 'message[image]', type: 'file'}
             %i.fa.fa-image
