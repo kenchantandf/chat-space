@@ -3,6 +3,6 @@
     %p.chat-message__user
       = message.user.name
     %p.chat-message__time
-      / = message.message_time
+      = message.created_at
   %p.chat-message__body
     = message.text
