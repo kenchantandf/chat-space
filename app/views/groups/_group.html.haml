@@ -2,4 +2,8 @@
   %li.chat-list
     %p.chat-list__name
       = group.name
-    %p.chat-list__message messages
+    %p.chat-list__message
+      - if group.messages.exists?
+        = group.messages.last.text
+      - else
+        まだメッセージはありません。
