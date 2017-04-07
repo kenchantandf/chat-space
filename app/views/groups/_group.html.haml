@@ -3,4 +3,4 @@
     %p.chat-list__name
       = group.name
     %p.chat-list__message
-      = group.messages.present? ? group.messages.last.text : 'まだメッセージはありません。'
+      = group.last_message
