@@ -11,3 +11,4 @@ def last_message
   self.messages.present? ? self.messages.last.text : 'まだメッセージはありません。'
 end
 end
+a
