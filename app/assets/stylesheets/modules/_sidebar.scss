@@ -21,7 +21,7 @@
       float: left;
       line-height: 60px;
       letter-spacing: 2px;
-      font-size: 16px;
+      font-size: 19px;
     }
 
     &__icons {
@@ -53,7 +53,13 @@
       display: block;
       padding: 20px;
       color: $white;
-    }
+      text-decoration: none;
+
+      &:hover {
+          background-color: #394b63;
+          text-decoration: none;
+        }
+      }
 
       &__name {
         display: inline-block;

@@ -17,6 +17,8 @@
 
       &--left {
         float: left;
+        font-size: 22px;
+        padding-top: 10px;
       }
 
         h2 {
@@ -32,6 +34,7 @@
           color: $light-gray;
           font-size: 12px;
           margin-bottom: 10px;
+          margin-top: 10px;
         }
 
           span {
@@ -44,7 +47,7 @@
           display: inline-block;
           line-height: 40px;
           margin: 28px 0;
-          padding: 0 20px;
+          padding: 0 23px;
           border: 2px solid $light-blue;
           font-size: 14px;
           float: right;

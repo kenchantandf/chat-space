@@ -13,47 +13,13 @@
 
     .chat-context
       %ul.chat-messages
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__user Kento
-            %p.chat-message__time 2017/03/05 23:43:22
-          %p.chat-message__body みんな久しぶり！
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__user Kento
-            %p.chat-message__time 2017/03/05 23:44:02
-          %p.chat-message__body 大学決まった？
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__user Hayato
-            %p.chat-message__time 2017/03/05 23:45:20
-          %p.chat-message__body まあね
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__user Hayato
-            %p.chat-message__time 2017/03/05 23:47:04
-          %p.chat-message__body カナダのUBCに進学することにしたよ
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__user Masato
-            %p.chat-message__time 2017/03/05 23:55:30
-          %p.chat-message__body 実は僕も
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__user Masato
-            %p.chat-message__time 2017/03/05 23:59:33
-          %p.chat-message__body イギリスの中学に行くことにしたんだ
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__user Kento
-            %p.chat-message__time 2017/03/06 00:00:43
-          %p.chat-message__body ええええええええ！！！
+      = render @messages
 
     .chat-footer
-      %form.new_message{ action: "", method: 'post'}
+      = form_for [@group, @message] do |f|
         .chat-footer__body
-          %textarea#message_body{ name: 'message[body]', placeholder: '   type a message'}
+          = f.text_field :text, placeholder: 'type a message', class: 'chat-footer__body__textarea', id: 'message_body'
           %label.chat-footer__body__file
-            %input#message_image{ name: 'message[image]', type: 'file'}
+            = f.file_field :image
             %i.fa.fa-image
-        %input.submit_btn{type: 'submit', value: 'Send'}
+        = f.submit :Send, class: 'chat-group-form__action-btn'
