@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :group do
     name          { Faker::Name.name }
-    user_id       1
+    id       1
     created_at    { DateTime.now }
     updated_at    { DateTime.now }
   end
