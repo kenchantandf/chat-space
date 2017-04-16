@@ -4,7 +4,6 @@ describe Message, type: :model do
   describe 'sending a message' do
 
     it "is valid with a text" do
-      # binding.pry
       message = build(:message)
       expect(message).to be_valid
     end
