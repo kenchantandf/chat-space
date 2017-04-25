@@ -14,20 +14,19 @@ $(function() {
     e.preventDefault();
     var textField = $('.chat-footer__body__textarea');
     var message = textField.val();
+    var formData = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
       url: './messages',
-      data: {
-        message: {
-          text: message
-        }
-      },
+      data: formData,
+      processData: false,
+      contentType: false,
       dataType: 'json'
     })
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-messages').append(html);
-      $('#new-message')[0].reset();
+      $(this)[0].reset();
     })
     .fail(function() {
       alert('メッセージを入力してください。');
