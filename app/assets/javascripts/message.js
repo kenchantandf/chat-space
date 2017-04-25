@@ -10,7 +10,7 @@ $(function() {
     return html;
   }
 
-  $('#new-message').on("submit", function(e) {
+  $('#new-message').on('submit', function(e) {
     e.preventDefault();
     var textField = $('.chat-footer__body__textarea');
     var message = textField.val();
@@ -30,7 +30,7 @@ $(function() {
       $('#new-message')[0].reset();
     })
     .fail(function() {
-      alert('ALERT');
+      alert('メッセージを入力してください。');
     });
     return false;
   });
