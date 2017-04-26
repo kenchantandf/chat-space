@@ -1,12 +1,12 @@
 $(function() {
   function buildHTML(message) {
-    var html = $(`<li class="chat-message">
+    var html = $(`<ol class="chat-message">
                     <div class="chat-message__header">
                       <p class="chat-message__user"> ${message.name} </p>
-                      <p class="chat-message__time"> ${message.created_at} </p>
+                      <p class="chat-message__time"> ${message.time} </p>
                     </div>
                     <p class="chat-message__body"> ${message.text} </p>
-                  </li>`);
+                  </ol>`);
     return html;
   }
 
