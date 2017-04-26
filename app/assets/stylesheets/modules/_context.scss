@@ -14,6 +14,7 @@
 
         &-message {
           padding-bottom: 40px;
+          list-style: none;
 
           &__header {
             @include clearfix();
