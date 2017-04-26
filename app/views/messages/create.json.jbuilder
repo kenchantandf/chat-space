@@ -1,3 +1,3 @@
 json.name @message.user.name
-json.time @message.message_time
+json.created_at @message.created_at
 json.text @message.text

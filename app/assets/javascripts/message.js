@@ -3,7 +3,7 @@ $(function() {
     var html = $(`<li class="chat-message">
                     <div class="chat-message__header">
                       <p class="chat-message__user"> ${message.name} </p>
-                      <p class="chat-message__time"> ${message.time} </p>
+                      <p class="chat-message__time"> ${message.created_at} </p>
                     </div>
                     <p class="chat-message__body"> ${message.text} </p>
                   </li>`);
@@ -26,7 +26,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-messages').append(html);
-      $(this)[0].reset();
+      $('#new-message')[0].reset();
     })
     .fail(function() {
       alert('メッセージを入力してください。');
