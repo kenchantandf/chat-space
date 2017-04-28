@@ -12,9 +12,9 @@ $(function() {
 
   $('#new-message').on('submit', function(e) {
     e.preventDefault();
-    var textField = $('.chat-footer__body__textarea');
-    var message = textField.val();
-    var formData = new FormData($(this).get(0));
+    var textField = $('.chat-footer__body__textarea'),
+          message = textField.val(),
+          formData = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
       url: './messages',
