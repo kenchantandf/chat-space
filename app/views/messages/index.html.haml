@@ -12,8 +12,7 @@
       = link_to 'Edit', edit_group_path(@group), class: 'chat-top__edit-btn'
 
     .chat-context
-      %ul.chat-messages
-      = render @messages
+      %ul.chat-messages= render @messages
 
     .chat-footer
       = form_for [@group, @message], html: {id: 'new-message'} do |f|
