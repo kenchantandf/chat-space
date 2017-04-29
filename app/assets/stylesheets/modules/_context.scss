@@ -9,11 +9,12 @@
     }
 
       &-messages {
-        padding:  0 40px;
+        padding: 0px;
       }
 
         &-message {
           padding-bottom: 40px;
+          list-style: none;
 
           &__header {
             @include clearfix();

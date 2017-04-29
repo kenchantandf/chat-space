@@ -1,8 +1,8 @@
-%ol.chat-message
+%li.chat-message
   .chat-message__header
     %p.chat-message__user
       = message.user.name
     %p.chat-message__time
-      = l(message.created_at, format: :default)
+      = message.message_time
   %p.chat-message__body
     = message.text
