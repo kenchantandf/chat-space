@@ -17,7 +17,8 @@ $(function() {
           formData = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
-      url: './messages', context: this,
+      url: './messages',
+      context: this,
       data: formData,
       processData: false,
       contentType: false,
@@ -26,7 +27,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-messages').append(html);
-      $('#new-message')[0].reset();
+      $(this).get(0).reset();
     })
     .fail(function() {
       alert('メッセージを入力してください。');
