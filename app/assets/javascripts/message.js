@@ -17,7 +17,7 @@ $(function() {
           formData = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
-      url: './messages',
+      url: './messages', context: this,
       data: formData,
       processData: false,
       contentType: false,
