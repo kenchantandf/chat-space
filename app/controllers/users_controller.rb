@@ -13,6 +13,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.where('name LIKE(?) and id != ?', "#{params[:name]}%", current_user)
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
 
   def user_params
