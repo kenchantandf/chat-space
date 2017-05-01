@@ -1,0 +1,5 @@
+%li.chat-group-user
+  = f.hidden_field :user_ids, value: user.id, name: 'group[user_ids][]'
+  %p.chat-group-user__name
+    = user.name
+  %a.chat-group-user__btn 削除

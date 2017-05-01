@@ -1,20 +1,34 @@
 .chat-group-form
-  %h1 チャットグループ編集
-  = form_for @group do |f|
+  - if current_page?(action: :new)
+    %h1 新規チャットグループ
+  - else
+    %h1 チャットグループ編集
+  = form_for(@group) do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label 'グループ名', class: 'chat-group-form__label'
+        = f.label 'グループ名', class: 'chat-group-form__field--label', id: 'chat_group_name'
       .chat-group-form__field--right
-        = f.text_field :name, class: 'chat-group-form__input', autofocus: true
+        = f.text_field :name, placeholder: 'グループ名を入力してください', class: 'chat-group-form__field--input', id: 'chat_group_name', value: @group.name, type: 'text'
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label 'チャットメンバーを追加', class: 'chat-group-form__field--label', id: 'chat_group_チャットメンバーを追加'
+      .chat-group-form__field--right
+        .chat-group-form__search.clearfix
+        %input.chat-group-form__field--input#user-search-field{name: 'name', type: 'text', placeholder: '追加したいユーザーを入力してください'}
+        #user-search-result
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        = f.label 'チャットメンバーを追加', class: 'chat-group-form__label'
+        = f.label :チャットメンバー, class: 'chat-group-form__field--label', id: 'chat-group_チャットメンバー'
       .chat-group-form__field--right
-        .chat-group-form__search.clearfix
-          = f.collection_check_boxes(:user_ids, User.all, :id, :name)
-        #user-search-result
+        %li.chat-group-user#group-users
+          %li.chat-group-user
+            = f.hidden_field :user_ids, value: current_user.id, name: 'group[user_ids][]'
+            %p.chat-group-user__name
+              = current_user.name
+          = render partial: 'groups/user', collection: @group.users.where.not(id: current_user.id), locals: { f: f }
+
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
-        .chat-group-form__field--right
-          = f.submit 'Save', class: 'submit-save'
+      .chat-group-form__field--right
+        = f.submit :Save, class: 'chat-group-form__action-btn'
