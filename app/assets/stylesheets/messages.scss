@@ -17,6 +17,13 @@ html, body {
     letter-spacing: 2px;
     font-size: 24px;
     text-align: center;
+    font-weight: bold;
+  }
+
+  &__input {
+    width: 600px;
+    height: 50px;
+    padding-left: 20px;
   }
 
   &__errors {
@@ -55,12 +62,26 @@ html, body {
       padding-right: 20px;
       padding-left: 20px;
       box-sizing: border-box;
+      font-weight: bold;
     }
 
     &--right {
       float: right;
       width: 70%;
     }
+
+  .submit-save{
+    float: left;
+    display: inline-block;
+    width: 80px;
+    margin-right: 10px;
+    line-height: 50px;
+    color: $white;
+    background-color: $light-blue;
+    text-align: center;
+    border: none;
+    padding: 0;
+  }
 
     &__label {
       display: block;
