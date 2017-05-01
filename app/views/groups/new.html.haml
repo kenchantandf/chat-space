@@ -10,7 +10,7 @@
       .chat-group-form__field--left
         = f.label 'チャットメンバー', class: 'chat-group-form__label'
       .chat-group-form__field--right
-        = text_field_tag :search, "", id: "inc_search",  class: 'chat-group-form__input', name: 'keyword',  autofocus: true, placeholder: '追加したいユーザー名を入力して下さい'
+        = text_field_tag :search, "", id: 'inc_search',  class: 'chat-group-form__input', name: 'keyword',  autofocus: true, placeholder: '追加したいユーザー名を入力して下さい'
         #user-search-result
 
     .chat-group-form__field.clearfix
