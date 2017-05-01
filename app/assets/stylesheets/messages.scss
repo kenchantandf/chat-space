@@ -70,6 +70,16 @@ html, body {
       width: 70%;
     }
 
+    &--input {
+    width: 600px;
+    height: 50px;
+    padding-left: 20px;
+    }
+
+    &__field:after {
+      text-decoration: none;
+    }
+
   .submit-save{
     float: left;
     display: inline-block;
@@ -99,12 +109,13 @@ html, body {
     }
   }
 
-  .chat-group-user {
+  .add-group-user {
     @include clearfix();
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    list-style: none;
 
     &__name {
       float: left;
@@ -114,6 +125,27 @@ html, body {
       float: right;
       display: inline-block;
       cursor: pointer;
+      color: #38aef0;
+    }
+  }
+
+  .chat-group-user {
+    @include clearfix();
+    padding: 0 15px;
+    line-height: 50px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+
+    &__name {
+      float: left;
+    }
+
+    &__btn {
+      float: right;
+      display: inline-block;
+      cursor: pointer;
+      color: red;
 
       &__btn--add {
         color: #38aef0;
