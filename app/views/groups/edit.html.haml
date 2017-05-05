@@ -1,8 +1,5 @@
 .chat-group-form
-  - if current_page?(action: :new)
-    %h1 新規チャットグループ
-  - else
-    %h1 チャットグループ編集
+  %h1 チャットグループ編集
   = form_for(@group) do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
