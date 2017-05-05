@@ -49,10 +49,6 @@ function AjaxSearch() {
       });
     }
   })
-  .fail(function() {
-    alert('変更が保存されませんでした。');
-  });
-  return false;
 }
 
 function AddUser(user, user_id, user_name) {
