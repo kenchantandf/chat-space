@@ -27,7 +27,7 @@ gem "haml-rails", "~> 0.9"
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
