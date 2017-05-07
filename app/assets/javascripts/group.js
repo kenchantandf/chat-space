@@ -3,10 +3,10 @@ $(document).on('turbolinks:load', function() {
     AjaxSearch();
   });
   $('.chat-group-form').on('click', '.add-group-user__btn', function() {
-    var user = $(this).parent();
-    var user_id   = user.data('id');
-    var user_name = user.data('name');
-    AddUser(user, user_id, user_name);
+    var user = $(this).parent(),
+        userId   = user.data('id');
+        userName = user.data('name');
+    AddUser(user, userId, userName);
   });
   $('.chat-group-form').on('click', '.chat-group-user__btn', function() {
     var user = $(this).parent();
