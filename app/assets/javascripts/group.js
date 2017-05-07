@@ -55,9 +55,9 @@ function AjaxSearch() {
   }
 }
 
-function AddUser(user, user_id, user_name) {
+function AddUser(user, userId, userName) {
   user.remove();
-  var list = buildUserList(user_id, user_name);
+  var list = buildUserList(userId, userName);
   $('#group-users').append(list);
 }
 
