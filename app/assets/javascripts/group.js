@@ -43,6 +43,7 @@ function AjaxSearch() {
       dataType: 'json',
     })
     .done(function(data) {
+      $(".add-group-user").remove();
       $.each(data.users, function(i, user) {
         var list = buildAddList(user);
         $('#user-search-result').append(list);
