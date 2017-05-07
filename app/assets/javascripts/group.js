@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  $('#user-search-field').on('keyup', function() {
-    AjaxSearch();
-  });
+  $('#user-search-field').on('keyup', AjaxSearch);
   $('.chat-group-form').on('click', '.add-group-user__btn', function() {
     var user = $(this).parent(),
         userId   = user.data('id');
@@ -33,7 +31,7 @@ function buildUserList(id, name) {
 }
 
 function AjaxSearch() {
-  var keyword = $('#user-search-field').val();
+  var keyword = $(this).val();
 
   if (keyword.length != 0) {
     $.ajax({
