@@ -1,9 +1,5 @@
 function buildHTML(message) {
-  if (message.image) {
-    var image = `<img src="${ message.image }"/>`
-  } else {
-    var image = ''
-  };
+  var image = (message.image) ? '<img src="${ message.image }"/>' : '';
   var html = `<li class="chat-message">
                 <div class="chat-message__header">
                   <p class="chat-message__user">${ message.name }</p>
