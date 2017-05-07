@@ -34,21 +34,24 @@ function buildUserList(id, name) {
 
 function AjaxSearch() {
   var keyword = $('#user-search-field').val();
-  $.ajax({
-    type: 'GET',
-    url: '/users/search',
-    data: { name: keyword },
-    dataType: 'json'
-  })
-  .done(function(data) {
-    $('.add-group-user').remove();
-    if (keyword.length !== 0) {
+
+  if (keyword.length != 0) {
+    $.ajax({
+      type: 'GET',
+      url: '/users/search',
+      data: { name: keyword },
+      dataType: 'json',
+    })
+    .done(function(data) {
       $.each(data.users, function(i, user) {
         var list = buildAddList(user);
         $('#user-search-result').append(list);
       });
-    }
-  })
+    })
+    .fail(function() {
+      alert('エラーが発生しました。');
+    });
+  }
 }
 
 function AddUser(user, user_id, user_name) {
