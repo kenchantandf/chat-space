@@ -1,14 +1,15 @@
-$(function() {
-  function buildHTML(message) {
-    var html = $(`<li class="chat-message">
-                    <div class="chat-message__header">
-                      <p class="chat-message__user"> ${message.name} </p>
-                      <p class="chat-message__time"> ${message.time} </p>
-                    </div>
-                    <p class="chat-message__body"> ${message.text} </p>
-                  </li>`);
-    return html;
-  }
+function buildHTML(message) {
+  var image = (message.image) ? '<img src="${ message.image }"/>' : '';
+  var html = `<li class="chat-message">
+                <div class="chat-message__header">
+                  <p class="chat-message__user">${ message.name }</p>
+                  <p class="chat-message__time">${ message.time }</p>
+                </div>
+                <p class="chat-message__body">${ message.text }</p>
+                ${ image }
+              </li>`;
+  return html;
+}
 
   $('#new-message').on('submit', function(e) {
     e.preventDefault();
@@ -34,4 +35,3 @@ $(function() {
     });
     return false;
   });
-});
