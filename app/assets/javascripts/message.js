@@ -1,5 +1,5 @@
 function buildHTML(message) {
-  var image = (message.image) ? '<img src="${ message.image }"/>' : '';
+  var image = (message.image) ? `<img src = ${message.image}>` : '';
   var html = `<li class="chat-message">
                 <div class="chat-message__header">
                   <p class="chat-message__user">${ message.name }</p>
@@ -35,3 +35,23 @@ function buildHTML(message) {
     });
     return false;
   });
+
+  setInterval(function() {
+    $.ajax({
+      type: 'GET',
+      url: './messages',
+      dataType: 'json'
+    })
+    .done(function (data){
+      var reloadMessage = $('.chat-message').length;
+          newMessage = data.messages.length;
+          buildMessage ='';
+        for(var i = reloadMessage; i < newMessage; i++){
+           buildMessage += buildHTML(data.messages[i]);
+        };
+     $('.chat-messages').append(buildMessage);
+    })
+    .fail(function(){
+      alert("エラーが発生しました。");
+    })
+  }, 5000);
