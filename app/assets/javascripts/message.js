@@ -11,6 +11,12 @@ function buildHTML(message) {
   return html;
 }
 
+function scrollBottom() {
+  $('.chat-context').animate({
+    scrollTop: $('.chat-messages').height()
+  });
+}
+
   $('#new-message').on('submit', function(e) {
     e.preventDefault();
     var textField = $('.chat-footer__body__textarea'),
@@ -50,6 +56,7 @@ function buildHTML(message) {
            buildMessage += buildHTML(data.messages[i]);
         };
      $('.chat-messages').append(buildMessage);
+     scrollBottom();
     })
     .fail(function(){
       alert("エラーが発生しました。");
