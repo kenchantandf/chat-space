@@ -37,8 +37,9 @@ function AjaxSend(){
     })
     .done(function(data) {
       var html = buildHTML(data);
+          insertHTML = $("#new-message").get(0);
       $('.chat-messages').append(html);
-      $("#new-message").get(0).reset();
+      insertHTML.reset();
       scrollBottom();
     })
     .fail(function() {
