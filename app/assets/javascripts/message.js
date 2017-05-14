@@ -1,3 +1,12 @@
+$(document).on('turbolinks:load', function() {
+  $('#new-message').on("submit", function(e) {
+    e.preventDefault();
+    AjaxSend();
+    return false;
+  });
+  pageReload();
+});
+
 function buildHTML(message) {
   var image = (message.image) ? `<img src = ${message.image}>` : '';
   var html = `<li class="chat-message">
@@ -17,16 +26,12 @@ function scrollBottom() {
   });
 }
 
-  $('#new-message').on('submit', function(e) {
-    e.preventDefault();
-    var textField = $('.chat-footer__body__textarea'),
-          message = textField.val(),
-          formData = new FormData($(this).get(0));
+function AjaxSend(){
     $.ajax({
       type: 'POST',
       url: './messages',
       context: this,
-      data: formData,
+      data: new FormData($("#new-message").get(0)),
       processData: false,
       contentType: false,
       dataType: 'json'
@@ -34,14 +39,15 @@ function scrollBottom() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-messages').append(html);
-      $(this).get(0).reset();
+      $("#new-message").get(0).reset();
+      scrollBottom();
     })
     .fail(function() {
       alert('メッセージを入力してください。');
     });
-    return false;
-  });
+  }
 
+function pageReload(){
   setInterval(function() {
     $.ajax({
       type: 'GET',
@@ -62,3 +68,4 @@ function scrollBottom() {
       alert("エラーが発生しました。");
     })
   }, 5000);
+}
