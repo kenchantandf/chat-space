@@ -8,14 +8,14 @@ $(document).on('turbolinks:load', function() {
 });
 
 function buildHTML(message) {
-  var image = (message.image) ? `<img src = ${message.image}>` : '';
+  var image = (message.image) ? `<img src = ${ message.image }>` : '';
   var html = `<li class="chat-message">
                 <div class="chat-message__header">
                   <p class="chat-message__user">${ message.name }</p>
                   <p class="chat-message__time">${ message.time }</p>
                 </div>
                 <p class="chat-message__body">${ message.text }</p>
-                ${ image }
+                <p>${ image }</p>
               </li>`;
   return html;
 }
@@ -30,7 +30,6 @@ function AjaxSend(){
     $.ajax({
       type: 'POST',
       url: './messages',
-      context: this,
       data: new FormData($("#new-message").get(0)),
       processData: false,
       contentType: false,
@@ -62,7 +61,7 @@ function pageReload(){
            buildMessage += buildHTML(data.messages[i]);
         };
      $('.chat-messages').append(buildMessage);
-     scrollBottom();
+      scrollBottom();
     })
     .fail(function(){
       alert("エラーが発生しました。");
