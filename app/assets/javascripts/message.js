@@ -56,7 +56,6 @@ function sendMessageAjax() {
 }
 
 function reloadPage() {
-  if (window.location.href.match(/messages/)) {
     setInterval(function() {
       $.ajax({
         type: 'GET',
@@ -79,5 +78,4 @@ function reloadPage() {
         alert('エラーが発生しました。');
       });
     }, 5000);
-  };
-}
+  }
