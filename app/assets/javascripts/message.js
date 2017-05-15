@@ -79,5 +79,5 @@ function reloadPage() {
         alert('エラーが発生しました。');
       });
     }, 5000);
-  }
+  };
 }
