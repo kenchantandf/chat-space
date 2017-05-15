@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function() {
     e.preventDefault();
 
     sendMessageAjax = sendMessageAjax.bind(this);
-    
+
     sendMessageAjax();
   });
   reloadPage();
@@ -20,7 +20,7 @@ function buildHTML(message) {
       </div>
       <p class="chat-message__body">${ message.text }</p>
       ${ image }
-    </li>  
+    </li>
   `;
 }
 
