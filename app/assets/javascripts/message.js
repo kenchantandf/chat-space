@@ -56,26 +56,28 @@ function sendMessageAjax() {
 }
 
 function reloadPage() {
-  setInterval(function() {
-    $.ajax({
-      type: 'GET',
-      url: './messages',
-      dataType: 'json',
-    })
-    .done(function(data) {
-      var currentMessagesNum = $('.chat-message').length,
-          newMessgaesNum = data.messages.length,
-          newMessages = data.messages.slice(currentMessagesNum, newMessgaesNum),
-          newMessagesHTML = '';
+  if (window.location.href.match(/messages/)) {
+    setInterval(function() {
+      $.ajax({
+        type: 'GET',
+        url: './messages',
+        dataType: 'json',
+      })
+      .done(function(data) {
+        var currentMessagesNum = $('.chat-message').length,
+            newMessgaesNum = data.messages.length,
+            newMessages = data.messages.slice(currentMessagesNum, newMessgaesNum),
+            newMessagesHTML = '';
 
-      $.each(newMessages, function(i, message) {
-        $('.chat-messages').append(buildHTML(message));
+        $.each(newMessages, function(i, message) {
+          $('.chat-messages').append(buildHTML(message));
+        });
+
+        scrollToBottom();
+      })
+      .fail(function() {
+        alert('エラーが発生しました。');
       });
-
-      scrollToBottom();
-    })
-    .fail(function() {
-      alert('エラーが発生しました。');
-    });
-  }, 5000);
+    }, 5000);
+  }
 }
