@@ -56,6 +56,7 @@ function sendMessageAjax() {
 }
 
 function reloadPage() {
+  if (window.location.href.match(/messages/)) {
     setInterval(function() {
       $.ajax({
         type: 'GET',
@@ -79,3 +80,4 @@ function reloadPage() {
       });
     }, 5000);
   }
+}
